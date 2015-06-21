@@ -36,7 +36,7 @@ public class ConfigInterpreter {
         for (String key : config.getConfigurationSection(basePath + "reward").getKeys(false)) {
             requirements.put(Material.getMaterial(key), config.getInt(basePath + "reward." + key));
         }
-        String lore = config.getString(basePath + "lore");
+        List<String> lore = config.getStringList(basePath + "lore");
         Material material = Material.getMaterial(config.getString(basePath + "material"));
         if(config.getBoolean(basePath + "key")){
             String mat = config.getString(basePath + "key" + ".material");

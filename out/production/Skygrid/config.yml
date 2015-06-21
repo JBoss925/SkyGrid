@@ -4,7 +4,11 @@ Quests:
       LOG: 5
     reward:
       DIAMOND: 8
-    lore: 'Lore for item'
+    key: True
+      material: 'GOLD_INGOT'
+      lore: ['lore here']
+      displayname: 'displaynamehere'
+    lore: ['Lore for item']
     material: 'WOOD'
 Players:
   JBoss925: ['QuestName']

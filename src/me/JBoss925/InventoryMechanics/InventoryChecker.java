@@ -14,6 +14,10 @@ import java.util.HashMap;
  */
 public class InventoryChecker {
 
+    public InventoryChecker(){
+
+    }
+
     public static boolean hasEnoughOfEach(HashMap<Material, Integer> requirements, Player p){
         for(Material m: requirements.keySet()){
             if(!p.getInventory().contains(m)){

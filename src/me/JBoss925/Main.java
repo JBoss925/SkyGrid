@@ -2,6 +2,8 @@ package me.JBoss925;
 
 import me.JBoss925.ConfigExecutors.ConfigInterpreter;
 import me.JBoss925.ConfigExecutors.ConfigWriter;
+import me.JBoss925.InventoryMechanics.IconMenu;
+import me.JBoss925.InventoryMechanics.IconMenuManager;
 import me.JBoss925.QuestMechanics.QuestManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,9 +16,10 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable(){
-        Bukkit.getServer().getPluginManager().registerEvents(new Listeners(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new Listeners(this), this);
         new ConfigWriter(this).writeDefaults();
         new QuestManager(this).setQuests(new ConfigInterpreter(this).getQuests());
+        new IconMenuManager(this).createNewIconMenu();
     }
 
     @Override
